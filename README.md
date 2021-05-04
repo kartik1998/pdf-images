@@ -44,8 +44,10 @@ const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/pat
 - <b> An error response will look something like: </b>
 
 ```javascript
-	pdfPath: '/pdf/path/sample_pdf.pf',
-	error: <Err object>
+{
+  pdfPath: '/pdf/path/sample_pdf.pf',
+  error: <Err object>
+}
 ```
 
 ## Usage: ImageMagick
@@ -73,8 +75,8 @@ const result = ImageMagick.convert('/pdf/path/sample_pdf.pdf', 'output/directory
 
 ```javascript
 {
-	pdfPath: '/pdf/path/sample_pdf.pf',
-	error: <Err object>
+  pdfPath: '/pdf/path/sample_pdf.pf',
+  error: <Err object>
 }
 ```
 
