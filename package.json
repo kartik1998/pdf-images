@@ -1,0 +1,29 @@
+{
+  "name": "pdf-images",
+  "version": "1.0.0",
+  "description": "The pf-images library aims to simplify pdf-conversion by using poppler / pdfImages & imageMagick to convert pdfs to images.",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "node build/index.js",
+    "compile": "tsc -p tsconfig.json",
+    "build": "npm run compile && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kartik1998/pdf-images.git"
+  },
+  "keywords": [
+    "pdf-images",
+    "pdf",
+    "image",
+    "conversion",
+    "pdf2img",
+    "pdf2images"
+  ],
+  "author": "Kartik Rawat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kartik1998/pdf-images/issues"
+  },
+  "homepage": "https://github.com/kartik1998/pdf-images#readme"
+}
