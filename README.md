@@ -12,7 +12,7 @@
 
 <blockquote> 
 linux: Ensure you have imagemagick and pdfImages installed <br>
-mac: Ensure you have imagemagick and poppler installer <br>
+mac: Ensure you have imagemagick and poppler installed <br>
 windows: not supported
 </blockquote>
 
