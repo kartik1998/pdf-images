@@ -8,9 +8,59 @@
 <p align = "center">
 <img src="https://img.shields.io/badge/npm-pdf2image-yellowgreen" alt="pdf2image"> </p>
 
+## Note
 <blockquote> 
-Note: <br>
 linux: Ensure you have imagemagick and pdfImages installed <br>
 mac: Ensure you have imagemagick and poppler installer <br>
 windows: not supported
 </blockquote>
+
+## Usage: Poppler
+
+```javascript
+const { Poppler } = require('pdf-images');
+const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName');
+```
+
+* <b>A successfull result will look something like: </b>
+
+```json
+{
+  pdfPath: '/pdf/path/sample_pdf.pf',
+  outputImagesDirectory: '/output/directory/outputName/',
+  images: [
+    '/output/directory/outputName/outputName-0.png',
+    '/output/directory/outputName/outputName-0.png'
+  ],
+  success: true
+}
+```
+* <b> An error response will look something like: </b>
+
+```json
+	pdfPath: '/pdf/path/sample_pdf.pf',
+	error: <Err object>
+```
+
+## Usage: ImageMagick
+```javascript
+const { ImageMagick } = require('pdf-images');
+const result = ImageMagick('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName');
+```
+
+* <b>A successfull result will look something like: </b>
+
+```json
+{
+  pdfPath: '/pdf/path/sample_pdf.pf',
+  outputImagesDirectory: '/output/directory/outputName/',
+  images: [
+    '/output/directory/outputName/outputName-0.png',
+    '/output/directory/outputName/outputName-0.png'
+  ],
+  success: true
+}
+```
+
+
+
