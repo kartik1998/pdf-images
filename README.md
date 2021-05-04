@@ -7,3 +7,10 @@
 </p> 
 <p align = "center">
 <img src="https://img.shields.io/badge/npm-pdf2image-yellowgreen" alt="pdf2image"> </p>
+
+<blockquote> 
+Note: <br>
+linux: Ensure you have imagemagick and pdfImages installed <br>
+mac: Ensure you have imagemagick and poppler installer <br>
+windows: not supported
+</blockquote>
