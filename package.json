@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/kartik1998/pdf-images/issues"
   },
-  "homepage": "https://github.com/kartik1998/pdf-images#readme"
+  "homepage": "https://github.com/kartik1998/pdf-images#readme",
+  "devDependencies": {
+    "@types/node": "^15.0.1"
+  }
 }

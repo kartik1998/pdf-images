@@ -3,7 +3,6 @@
 
 <p align = "center"> <b> Simplify pdf-conversion by using in built methods which use poppler & imageMagick to convert pdfs to images. </b></p>
 
-
 <p align = "center"> <img src = "https://img.shields.io/badge/pdf--images-pdf2image-brightgreen" alt="pdf-image">
 </p> 
 <p align = "center">
