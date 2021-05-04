@@ -5,8 +5,9 @@ import path from 'path';
 /**
  * @class {Poppler}
  * @description extracts all the images from a pdf and writes them to a directory
+ * @performance takes more time than poppler but more reliable in conversions
  * */
-export default class Poppler {
+export default class ImageMagick {
   /**
    * @param pdfPath Path of the pdf that you want to extract images from
    * @param outputImgDir The output image directory
@@ -20,7 +21,7 @@ export default class Poppler {
     }
     const infoObject: any = { pdfPath };
     try {
-      execFileSync('pdfimages', ['-j', '-png', '-tiff', pdfPath, outputImgPath + '/' + outputImgName]);
+      execFileSync('convert', ['-quiet', pdfPath, '-quality', 100, outputImgPath + '/' + outputImgName + '.png']);
       infoObject.outputImagesDirectory = outputImgPath;
       infoObject.images = fs.readdirSync(outputImgPath).map((img) => outputImgPath + '/' + img);
       infoObject.success = true;
