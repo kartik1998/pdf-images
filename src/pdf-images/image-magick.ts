@@ -8,6 +8,8 @@ import path from 'path';
  * @performance takes more time than poppler but more reliable in conversions
  * */
 export default class ImageMagick {
+  private static quality: number = 100;
+  private static density: number = 200;
   /**
    * @param pdfPath Path of the pdf that you want to extract images from
    * @param outputImgDir The output image directory
@@ -21,7 +23,15 @@ export default class ImageMagick {
     }
     const infoObject: any = { pdfPath };
     try {
-      execFileSync('convert', ['-quiet', pdfPath, '-quality', 100, outputImgPath + '/' + outputImgName + '.png']);
+      execFileSync('convert', [
+        '-quiet',
+        '-density',
+        this.density,
+        pdfPath,
+        '-quality',
+        this.quality,
+        outputImgPath + '/' + outputImgName + '.png',
+      ]);
       infoObject.outputImagesDirectory = outputImgPath;
       infoObject.images = fs.readdirSync(outputImgPath).map((img) => outputImgPath + '/' + img);
       infoObject.success = true;
@@ -29,5 +39,20 @@ export default class ImageMagick {
       infoObject.error = err;
     }
     return infoObject;
+  }
+
+  public static setQuality(quality: number): void {
+    this.quality = quality;
+  }
+
+  public static setDensity(density: number): void {
+    this.density = density;
+  }
+
+  public static getSettings(): any {
+    const out: any = {};
+    out.quality = this.quality;
+    out.density = this.density;
+    return out;
   }
 }

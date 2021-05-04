@@ -8,3 +8,6 @@ const out = ImageMagick.convert(
 );
 
 console.log(out);
+ImageMagick.setQuality(50);
+ImageMagick.setDensity(30);
+console.log(ImageMagick.getSettings());

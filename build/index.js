@@ -12,3 +12,6 @@ const out = image_magick_1.default.convert(
   'out',
 );
 console.log(out);
+image_magick_1.default.setQuality(50);
+image_magick_1.default.setDensity(30);
+console.log(image_magick_1.default.getSettings());
