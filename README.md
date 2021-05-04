@@ -28,7 +28,7 @@ const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/pat
 
 * <b>A successfull result will look something like: </b>
 
-```json
+```javascript
 {
   pdfPath: '/pdf/path/sample_pdf.pf',
   outputImagesDirectory: '/output/directory/outputName/',
@@ -41,7 +41,7 @@ const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/pat
 ```
 * <b> An error response will look something like: </b>
 
-```json
+```javascript
 	pdfPath: '/pdf/path/sample_pdf.pf',
 	error: <Err object>
 ```
@@ -54,7 +54,7 @@ const result = ImageMagick('/pdf/path/sample_pdf.pdf', 'output/directory/path', 
 
 * <b>A successfull result will look something like: </b>
 
-```json
+```javascript
 {
   pdfPath: '/pdf/path/sample_pdf.pf',
   outputImagesDirectory: '/output/directory/outputName/',
@@ -68,7 +68,7 @@ const result = ImageMagick('/pdf/path/sample_pdf.pdf', 'output/directory/path', 
 
 * <b> An error response will look something like: </b>
 
-```json
+```javascript
 	pdfPath: '/pdf/path/sample_pdf.pf',
 	error: <Err object>
 ```
