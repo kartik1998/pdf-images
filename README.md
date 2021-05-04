@@ -9,6 +9,7 @@
 <img src="https://img.shields.io/badge/npm-pdf2image-yellowgreen" alt="pdf2image"> </p>
 
 ## Note
+
 <blockquote> 
 linux: Ensure you have imagemagick and pdfImages installed <br>
 mac: Ensure you have imagemagick and poppler installer <br>
@@ -26,7 +27,7 @@ const { Poppler } = require('pdf-images');
 const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName');
 ```
 
-* <b>A successfull result will look something like: </b>
+- <b>A successfull result will look something like: </b>
 
 ```javascript
 {
@@ -39,7 +40,8 @@ const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/pat
   success: true
 }
 ```
-* <b> An error response will look something like: </b>
+
+- <b> An error response will look something like: </b>
 
 ```javascript
 	pdfPath: '/pdf/path/sample_pdf.pf',
@@ -47,12 +49,13 @@ const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/pat
 ```
 
 ## Usage: ImageMagick
+
 ```javascript
 const { ImageMagick } = require('pdf-images');
 const result = ImageMagick.convert('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName');
 ```
 
-* <b>A successfull result will look something like: </b>
+- <b>A successfull result will look something like: </b>
 
 ```javascript
 {
@@ -66,7 +69,7 @@ const result = ImageMagick.convert('/pdf/path/sample_pdf.pdf', 'output/directory
 }
 ```
 
-* <b> An error response will look something like: </b>
+- <b> An error response will look something like: </b>
 
 ```javascript
 {
@@ -75,16 +78,11 @@ const result = ImageMagick.convert('/pdf/path/sample_pdf.pdf', 'output/directory
 }
 ```
 
-* <b> To set the density and quality of imagemagick use: </b>
+- <b> To set the density and quality of imagemagick use: </b>
 
 ```javascript
 ImageMagick.setQuality(100);
 ImageMagick.setDensity(200);
 ```
 
-* <b> Default ImageMagick quality is 100 and density is 200 </b>
-
-
-
-
-
+- <b> Default ImageMagick quality is 100 and density is 200 </b>
