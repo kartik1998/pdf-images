@@ -33,8 +33,8 @@ const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/pat
   pdfPath: '/pdf/path/sample_pdf.pf',
   outputImagesDirectory: '/output/directory/outputName/',
   images: [
-    '/output/directory/outputName/outputName-0.png',
-    '/output/directory/outputName/outputName-0.png'
+    '/output/directory/outputName/outputName-001.png',
+    '/output/directory/outputName/outputName-002.png'
   ],
   success: true
 }
@@ -49,7 +49,7 @@ const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/pat
 ## Usage: ImageMagick
 ```javascript
 const { ImageMagick } = require('pdf-images');
-const result = ImageMagick('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName');
+const result = ImageMagick.convert('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName');
 ```
 
 * <b>A successfull result will look something like: </b>
@@ -59,8 +59,8 @@ const result = ImageMagick('/pdf/path/sample_pdf.pdf', 'output/directory/path', 
   pdfPath: '/pdf/path/sample_pdf.pf',
   outputImagesDirectory: '/output/directory/outputName/',
   images: [
-    '/output/directory/outputName/outputName-0.png',
-    '/output/directory/outputName/outputName-0.png'
+    '/output/directory/outputName/outputName-001.png',
+    '/output/directory/outputName/outputName-002.png'
   ],
   success: true
 }
@@ -69,8 +69,10 @@ const result = ImageMagick('/pdf/path/sample_pdf.pdf', 'output/directory/path', 
 * <b> An error response will look something like: </b>
 
 ```javascript
+{
 	pdfPath: '/pdf/path/sample_pdf.pf',
 	error: <Err object>
+}
 ```
 
 * <b> To set the density and quality of imagemagick use: </b>
