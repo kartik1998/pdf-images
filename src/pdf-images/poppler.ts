@@ -21,7 +21,7 @@ export default class Poppler {
     const infoObject: any = { pdfPath };
     try {
       execFileSync('pdfimages', ['-j', '-png', '-tiff', pdfPath, outputImgPath + '/' + outputImgName]);
-      infoObject.imagesDirectory = outputImgPath;
+      infoObject.outputImagesDirectory = outputImgPath;
       infoObject.images = fs.readdirSync(outputImgPath).map((img) => outputImgPath + '/' + img);
       infoObject.success = true;
     } catch (err) {
