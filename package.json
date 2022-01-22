@@ -1,6 +1,6 @@
 {
   "name": "pdf-images",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "The pf-images library aims to simplify pdf-conversion by using poppler / pdfImages & imageMagick to convert pdfs to images.",
   "main": "build/index.js",
   "scripts": {
