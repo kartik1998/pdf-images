@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node build/index.js",
     "prepublishOnly": "npm run compile",
+    "prepare": "npm run compile",
     "compile": "tsc -p tsconfig.json",
     "build": "npm run compile && npm run start"
   },
