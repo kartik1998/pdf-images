@@ -24,7 +24,7 @@ Poppler is very fast and shows results in milliseconds, however it's accuracy is
 
 ```javascript
 const { Poppler } = require('pdf-images');
-const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName');
+const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName'); // you can also add a 4th arguement which can specify the output image extension like jpg or jpeg
 ```
 
 - <b>A successfull result will look something like: </b>
@@ -54,7 +54,7 @@ const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/pat
 
 ```javascript
 const { ImageMagick } = require('pdf-images');
-const result = ImageMagick.convert('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName');
+const result = ImageMagick.convert('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName'); // you can also add a 4th arguement which can specify the output image extension like jpg or jpeg
 ```
 
 - <b>A successfull result will look something like: </b>
