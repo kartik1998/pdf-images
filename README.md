@@ -52,6 +52,39 @@ const result = Poppler.convert('/pdf/path/sample_pdf.pdf', 'output/directory/pat
 
 ## Usage: ImageMagick
 
+#### Async api to convert
+
+- By default images have png extension
+- you can also add a string of the args that you want to run with the imagemagick shell command. checkout `resultWithArgs`
+
+```javascript
+const { ImageMagick } = require('pdf-images');
+const result = ImageMagick.convertAsync('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName');
+const resultWithArgs = ImageMagick.convertAsync('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName', '-alpha background');
+const resultWithDifferentExtension = ImageMagick.convertAsync(
+  '/pdf/path/sample_pdf.pdf',
+  'output/directory/path',
+  'outputName',
+  null,
+  'jpeg',
+);
+```
+
+- <b>A successfull result will look something like: </b>
+
+```javascript
+{
+  pdfPath: '/pdf/path/sample_pdf.pf',
+  outputImagesDirectory: '/output/directory/outputName/',
+  commandExecuted: 'convert -quiet -alpha background -density 200 -quality 100 /pdf/path/sample_pdf.pf /output/directory/outputName/outputName.jpeg',
+  images: [
+    '/output/directory/outputName/outputName-001.jpeg',
+    '/output/directory/outputName/outputName-002.jpeg'
+  ],
+  success: true
+}
+```
+
 ```javascript
 const { ImageMagick } = require('pdf-images');
 const result = ImageMagick.convert('/pdf/path/sample_pdf.pdf', 'output/directory/path', 'outputName'); // you can also add a 4th arguement which can specify the output image extension like jpg or jpeg
