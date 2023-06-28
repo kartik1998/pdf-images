@@ -1,6 +1,7 @@
-const { execFileSync } = require('child_process');
+const { execFileSync, exec } = require('child_process');
 import fs from 'fs';
 import path from 'path';
+import { FSUtils } from '../lib/utils';
 
 /**
  * @class {Poppler}
@@ -37,6 +38,47 @@ export default class ImageMagick {
       infoObject.images = fs.readdirSync(outputImgPath).map((img) => outputImgPath + '/' + img);
       infoObject.success = true;
     } catch (err) {
+      infoObject.error = err;
+    }
+    return infoObject;
+  }
+
+  /**
+   * @param pdfPath Path of the pdf that you want to extract images from
+   * @param outputImgDir The output image directory
+   * @param outputImgName The prefix image name of all the images extracted. eg: outputImgDir/outputImgName/outputImgName-001.png
+   * @param args? seperate args like "-alpha background" that you might want to use
+   * @param outputImgExtension? you can set the extension for your image here, by default it's png
+   * @returns {infoObject} If successfully converted infoObject contains the outputImgDirectoru and an array of image paths else it has an error object.
+   */
+  public static async convertAsync(
+    pdfPath: string,
+    outputImgDir: string,
+    outputImgName: string,
+    args?: string | null,
+    outputImgExtension?: string,
+  ) {
+    const infoObject: any = { pdfPath };
+    try {
+      const outputImgPath = path.join(outputImgDir, outputImgName);
+      if (!(await FSUtils.exists(outputImgPath))) await FSUtils.mkdir(outputImgPath);
+      const imgExtension = outputImgExtension || 'png';
+      const commandToBeExecuted = `convert -quiet ${args || ''} -density ${ImageMagick.density} -quality ${
+        ImageMagick.quality
+      } ${pdfPath} ${outputImgPath + '/' + outputImgName + '.' + imgExtension}`
+        .replace(/\s+/g, ' ')
+        .trim();
+      infoObject.commandExecuted = commandToBeExecuted;
+      await new Promise((resolve, reject) => {
+        exec(commandToBeExecuted, (err: unknown) => {
+          if (err) reject(err);
+          else resolve(true);
+        });
+      });
+      infoObject.outputImagesDirectory = outputImgPath;
+      infoObject.images = (await FSUtils.readdir(outputImgPath)).map((img: string) => outputImgPath + '/' + img);
+      infoObject.success = true;
+    } catch (err: unknown) {
       infoObject.error = err;
     }
     return infoObject;
