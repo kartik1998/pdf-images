@@ -27,3 +27,8 @@ export class FSUtils {
     });
   }
 }
+
+export function addBackslashForSpaces(inputString: string) {
+  var stringWithBackslash = inputString.replace(/ /g, '\\ ');
+  return stringWithBackslash;
+}
