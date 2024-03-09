@@ -65,7 +65,7 @@ export default class ImageMagick {
       const imgExtension = outputImgExtension || 'png';
       const commandToBeExecuted = `convert -quiet ${args || ''} -density ${ImageMagick.density} -quality ${
         ImageMagick.quality
-      } ${pdfPath} ${outputImgPath + '/' + outputImgName + '.' + imgExtension}`
+      } "${pdfPath}" ${outputImgPath + '/' + outputImgName + '.' + imgExtension}`
         .replace(/\s+/g, ' ')
         .trim();
       infoObject.commandExecuted = commandToBeExecuted;
