@@ -1,7 +1,7 @@
 const { execFileSync, exec } = require('child_process');
 import fs from 'fs';
 import path from 'path';
-import { FSUtils, addBackslashForSpaces } from '../lib/utils';
+import { FSUtils } from '../lib/utils';
 
 /**
  * @class {Poppler}
@@ -22,7 +22,6 @@ export default class ImageMagick {
     if (!fs.existsSync(outputImgPath)) {
       fs.mkdirSync(outputImgPath);
     }
-    pdfPath = addBackslashForSpaces(pdfPath);
     const infoObject: any = { pdfPath };
     const imgExtension = outputImgExtension || 'png';
     try {
@@ -62,7 +61,6 @@ export default class ImageMagick {
     const infoObject: any = { pdfPath };
     try {
       const outputImgPath = path.join(outputImgDir, outputImgName);
-      pdfPath = addBackslashForSpaces(pdfPath);
       if (!(await FSUtils.exists(outputImgPath))) await FSUtils.mkdir(outputImgPath);
       const imgExtension = outputImgExtension || 'png';
       const commandToBeExecuted = `convert -quiet ${args || ''} -density ${ImageMagick.density} -quality ${
