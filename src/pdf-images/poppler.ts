@@ -1,7 +1,6 @@
 const { execFileSync } = require('child_process');
 import fs from 'fs';
 import path from 'path';
-import { addBackslashForSpaces } from '../lib/utils';
 
 /**
  * @class {Poppler}
@@ -16,7 +15,6 @@ export default class Poppler {
    */
   public static convert(pdfPath: string, outputImgDir: string, outputImgName: string, outputImgExtension?: string): any {
     const outputImgPath = path.join(outputImgDir, outputImgName);
-    pdfPath = addBackslashForSpaces(pdfPath);
     if (!fs.existsSync(outputImgPath)) {
       fs.mkdirSync(outputImgPath);
     }
